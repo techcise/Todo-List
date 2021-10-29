@@ -1,13 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #333;
+  background-color: whitesmoke;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App{
+  display: grid;
+  grid-template-columns: 220px 450px 220px;
+  grid-template-rows: 100px 280px 280px;
+  justify-content: center;
+}
+
+.addItem{
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  margin-top: 25px;
+  margin-left: 60px;
+  display: flex;
+}
+
+#addBtn{
+  color: white;
+  border: none;
+  background-color: steelblue;
+  font-size: 16px;
+  width: 60px;
+  height: 34px;
+}
+
+#addBtn-disable{
+  color: white;
+  border: none;
+  background-color: skyblue;
+  font-size: 16px;
+  width: 60px;
+  height: 34px;
+}
+
+#task-input{
+  width: 80%;
+  outline: none;
+  border: none;
+  color: #333;
+  font-size: 18px;
+  background-color: white;
+  padding: 8px;
+  height: 18px;
+}
+
+#task-label{
+  font-size: 18px;
+}
+
+.items{
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  margin: 20px;
+  margin-left: 60px;
+}
+
+
+.task-title{
+  grid-column: 1 / 2;
+}
+
+.list-items .task-title{
+  max-width: 400px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.list-items .task-done{
+  text-decoration:  line-through #333;
+  max-width: 400px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+#removeIcon{
+  color: tomato;
+  width: 25px;
+  margin-bottom: 40px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+#doneIcon{
+  color: lightgreen;
+  width: 25px;
+  margin-bottom: 40px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+#task-label{
+  margin-right: 8px;
+}
+
+#task-input{
+  margin-right: 8px;
 }
