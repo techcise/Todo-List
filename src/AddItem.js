@@ -1,20 +1,16 @@
 import { useState } from "react";
+import db from './firebase';
+import firebase from 'firebase'
 
-
-const AddItem = ({ items, setItems }) => {
+const AddItem = () => {
     let [text, setText] = useState('');
-    let value = {title: `${text}`, done: false};
-    async function addItem(e){
+    function addItem(e){
         e.preventDefault();
-        let res = await fetch('http://localhost:5000/items', {
-            method: 'POST',
-            headers: {
-                'content-type':'application/json'
-            },
-            body: JSON.stringify(value)
-        });
-        let data = await res.json();
-        setItems([...items ,data]);
+        db.collection("items").add({
+            title: text,
+            done: false,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        })
         setText('');
     }
     return ( 
